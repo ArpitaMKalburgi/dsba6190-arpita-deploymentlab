@@ -5,7 +5,7 @@ variable "tag_class" {
 
 variable "tag_instructor" {
   type    = string
-  default = "akalburg"
+  default = "amk"
 }
 
 
@@ -37,7 +37,7 @@ variable "environment" {
 variable "student_name" {
   description = "Application Name"
   type        = string
-  default     = "akalburg"
+  default     = "amk"
 }
 
 variable "class_name" {
