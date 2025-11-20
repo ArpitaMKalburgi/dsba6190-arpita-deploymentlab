@@ -54,6 +54,6 @@ variable "sql_admin_user" {
 
 variable "sql_admin_password" {
   description = "SQL Admin Password"
-  type        = string
   sensitive   = true
+  default     = "MyStrongP@ssword123!"
 }
