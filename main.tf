@@ -41,6 +41,9 @@ resource "azurerm_storage_account" "storage" {
   account_tier             = "Standard"
   account_replication_type = "LRS"
 
+  account_kind = "StorageV2"
+
+  is_hns_enabled = true
 
   network_rules {
     default_action             = "Deny"
