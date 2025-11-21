@@ -93,7 +93,7 @@ resource "azurerm_mssql_server" "sql_server" {
   administrator_login          = var.sql_admin_user
   administrator_login_password = var.sql_admin_password
 
-  public_network_access_enabled = false
+  public_network_access_enabled = true
 
 
   tags = local.tags
