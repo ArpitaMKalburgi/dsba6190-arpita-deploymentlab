@@ -43,8 +43,8 @@ resource "azurerm_storage_account" "storage" {
 
   account_kind = "StorageV2"
 
-  is_hns_enabled = true
-
+  is_hns_enabled                = true
+  public_network_access_enabled = false
   network_rules {
     default_action             = "Deny"
     virtual_network_subnet_ids = [azurerm_subnet.subnet.id]
@@ -92,6 +92,9 @@ resource "azurerm_mssql_server" "sql_server" {
   version                      = "12.0"
   administrator_login          = var.sql_admin_user
   administrator_login_password = var.sql_admin_password
+
+  public_network_access_enabled = false
+
 
   tags = local.tags
 }
