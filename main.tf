@@ -45,6 +45,7 @@ resource "azurerm_storage_account" "storage" {
 
   is_hns_enabled                = true
   public_network_access_enabled = false
+
   network_rules {
     default_action             = "Deny"
     virtual_network_subnet_ids = [azurerm_subnet.subnet.id]
@@ -121,6 +122,7 @@ resource "azurerm_mssql_virtual_network_rule" "sql_vnet_rule" {
   subnet_id = azurerm_subnet.subnet.id
 
   depends_on = [
+    azurerm_mssql_server.sql_server,
     azurerm_subnet.subnet
   ]
 }
